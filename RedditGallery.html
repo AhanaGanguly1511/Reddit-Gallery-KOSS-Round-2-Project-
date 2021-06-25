@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	 
+</head>
+
+<body>
+  <ul id="slider1"></ul>
+    <script>
+	
+    $.getJSON('https://www.reddit.com/r/pics.json', function(success) {
+		var childrens = success.data.children;
+		var urls = [];
+        for(var children of childrens) {
+			var images = children.data.preview.images;
+			
+			for(var image of images) {
+			
+				urls.push(image.source.url);
+			
+			}
+			
+		}
+		$.each(urls, function(key, image){
+        var slide = '<li><img src="'+image+'" /></li>';
+        $('#slider1').append(slide);
+      });
+      $('#slider1').anythingSlider();
+    
+  });
+        </script>
+    </body>
+</html>
