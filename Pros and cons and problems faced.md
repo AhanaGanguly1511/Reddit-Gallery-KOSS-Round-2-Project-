@@ -50,3 +50,5 @@ wanted (the images were not getting displayed and it showed some icons
 in place of it).It was a logical error on my part as I had writted
 resolutions in place of source in line 21 as I misinterpreted the .json
 file.Finally with much effort, I could resolve the issue.
+
+3.Though I could extract the images from the urls given in the .json file, I could not align the images properly one by one.
